@@ -27,19 +27,25 @@ using Microsoft.Office.Interop.Excel;
 using Constants = Microsoft.Office.Interop.Excel.Constants;
 using Microsoft.JScript;
 using TextBox = System.Windows.Forms.TextBox;
+using System.Windows.Forms.DataVisualization.Charting;
+using Convert = System.Convert;
 
 namespace WindowsFormsApp4
 {
     public partial class Form1 : Form
     {
+        
         string[] ports = SerialPort.GetPortNames();
         //int maksm = 5, minm = 0, i=0;
-        
+        bool isConnected = false;
         //string sonuc;
         private string LDR_1;
+        private string LDR_2 = "90";
         //private int LDR_1L;
         private int Limit = 10;
         private string FilePathAndName;
+        int saniye = 0;       
+        int cycleNum = 0;
         public Form1()
         {
             InitializeComponent();
@@ -50,8 +56,10 @@ namespace WindowsFormsApp4
         private void Form1_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            
-           
+
+            denaturationProcess.Maximum = 30;
+            annealingProcess.Maximum = 30;
+            extensionProcess.Maximum = 30;
 
             ButtonSaveToExcel.Height = 50;
 
@@ -61,8 +69,14 @@ namespace WindowsFormsApp4
                 if (Chart1.Series[0].Points.Count == Limit)
                     Chart1.Series[0].Points.RemoveAt(0);
                 Chart1.ChartAreas[0].AxisY.Maximum = 100;
+
+                Chart1.Series[1].Points.AddXY(DateTime.Now.ToLongTimeString(), 0);
+                if (Chart1.Series[1].Points.Count == Limit)
+                    Chart1.Series[1].Points.RemoveAt(0);
+                //Chart1.ChartAreas[1].AxisY.Maximum = 100;
             }
             Chart1.ChartAreas[0].AxisY.Maximum = 100;
+            //Chart1.ChartAreas[1].AxisY.Maximum = 100;
 
             foreach (string port in ports)
             {
@@ -86,6 +100,7 @@ namespace WindowsFormsApp4
                 serialPort1.PortName = comboBox1.Text;
                 try
                 {
+                    isConnected = true;
                     serialPort1.Open();
                     TimerSerial.Start();
                     ButtonConnect.Enabled = false;
@@ -126,6 +141,10 @@ namespace WindowsFormsApp4
 
         private void ButtonStartRecording_Click(object sender, EventArgs e)
         {
+            saniye = 0;
+            cycleText.Text = cycleNumber.Text;
+            cycleNum = Convert.ToInt32(cycleNumber.Text);
+
             ButtonStartRecording.Enabled = false;
             ButtonStopRecording.Enabled = true;
             ButtonSaveToExcel.Enabled = false;
@@ -151,6 +170,11 @@ namespace WindowsFormsApp4
                 if (Chart1.Series[0].Points.Count == Limit)
                     Chart1.Series[0].Points.RemoveAt(0);
                 Chart1.ChartAreas[0].AxisY.Maximum = 100;
+
+                Chart1.Series[1].Points.AddXY(DateTime.Now.ToLongTimeString(), 0);
+                if (Chart1.Series[1].Points.Count == Limit)
+                    Chart1.Series[1].Points.RemoveAt(0);
+                //Chart1.ChartAreas[1].AxisY.Maximum = 100;
             }
             DataGridView1.Rows.Clear();
         }
@@ -238,14 +262,76 @@ namespace WindowsFormsApp4
         private void TimerDataLogRecord_Tick(object sender, EventArgs e)
         {
             DateTime DT = DateTime.Now;
-
             string LDR_1Log = LDR_1;
-            DataGridView1.Rows.Add(new string[] { DataGridView1.RowCount.ToString(), LDR_1Log, DT.ToLongTimeString(), DT.ToString("dd-MM-yyyy") });
+            string LDR_2Log = LDR_2;
+            NumberFormatInfo provider = new NumberFormatInfo();
+            provider.NumberDecimalSeparator = ".";
+            provider.NumberGroupSeparator = ",";
+            double set_temp = Convert.ToDouble(LDR_2Log, provider);
+            double cur_temp = Convert.ToDouble(LDR_1Log, provider);
+            serialPort1.WriteLine(LDR_2Log);
+
+            if (cycleNum != 0)
+            {
+                saniye++;
+                saniyeText.Text = saniye.ToString();
+                cycleText.Text = cycleNum.ToString();
+                //label11.Text = cur_temp.ToString();
+
+                if (saniye > 90 && saniye <= 120)
+                {
+                    denaturationProcess.Value = saniye - 90;
+                    if (saniye == 120)
+                    {
+                        LDR_2 = "55";
+                        serialPort1.WriteLine(LDR_2);
+                    }
+                }
+
+                else if (saniye > 190 && saniye <= 220)
+                {
+                    annealingProcess.Value = saniye - 190;
+                    if (saniye == 220)
+                    {
+                        LDR_2 = "72";
+                        serialPort1.WriteLine(LDR_2);
+                    }
+                }
+
+                else if (saniye > 280 && saniye <= 310)
+                {
+                    extensionProcess.Value = saniye - 280;
+                    if (saniye == 310)
+                    {
+                        LDR_2 = "90";
+                        serialPort1.WriteLine(LDR_2);
+                        cycleNum--;
+                        saniye = 0;
+                        denaturationProcess.Value = 0;
+                        annealingProcess.Value = 0;
+                        extensionProcess.Value = 0;
+                    }
+                }
+
+                /*if (saniye > 120)
+                {
+                    
+                }*/
+            }
+
+            
+
+            DataGridView1.Rows.Add(new string[] { DataGridView1.RowCount.ToString(), LDR_1Log, LDR_2Log, DT.ToLongTimeString(), DT.ToString("dd-MM-yyyy") });
             this.DataGridView1.FirstDisplayedScrollingRowIndex = this.DataGridView1.RowCount - 1;
 
             Chart1.Series[0].Points.AddXY(DateTime.Now.ToLongTimeString(), LDR_1Log);
-            if (Chart1.Series[0].Points.Count == Limit)
+            Chart1.Series[1].Points.AddXY(DateTime.Now.ToLongTimeString(), LDR_2Log);
+
+            /*if (Chart1.Series[0].Points.Count == Limit)
                 Chart1.Series[0].Points.RemoveAt(0);
+
+            if (Chart1.Series[1].Points.Count == Limit)
+                Chart1.Series[1].Points.RemoveAt(0);*/
 
             if (PictureBoxConnectionInd2.Visible == true)
                 PictureBoxConnectionInd2.Visible = false;
@@ -277,17 +363,33 @@ namespace WindowsFormsApp4
 
 
         }
-       
 
-    private void trackBar1_Scroll(object sender, EventArgs e)
+        private void setButton_Click_1(object sender, EventArgs e)
         {
-            int sicaklik = trackBar1.Value;
-            label4.Text = "" + sicaklik + "" + "°C";
-            if (serialPort1.IsOpen)
-            {
-                byte[] b = BitConverter.GetBytes(sicaklik);
-                serialPort1.Write(b, 0, 4);
-            }
+            
+                LDR_2 = setBox.Text;
+                serialPort1.WriteLine(LDR_2);
+            
+            
         }
+
+        
+
+
+
+
+
+
+        /*private void trackBar1_Scroll(object sender, EventArgs e)
+            {
+                int sicaklik = trackBar1.Value;
+                label4.Text = "" + sicaklik + "" + "°C";
+                if (serialPort1.IsOpen)
+                {
+                    byte[] b = BitConverter.GetBytes(sicaklik);
+                    serialPort1.Write(b, 0, 4);
+                }
+            }*/
+
     }
 }

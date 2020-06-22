@@ -1,0 +1,39 @@
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe.config
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.pdb
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csprojAssemblyReference.cache
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Form1.resources
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Properties.Resources.resources
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.GenerateResource.cache
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.ResolveComReference.cache
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\Interop.EnvDTE.dll
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\Interop.VSLangProj.dll
+C:\Users\Alişan Aygar\source\repos\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CoreCompileInputs.cache
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csprojAssemblyReference.cache
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\Interop.EnvDTE.dll
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\Interop.VSLangProj.dll
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.ResolveComReference.cache
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Form1.resources
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Properties.Resources.resources
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.GenerateResource.cache
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CoreCompileInputs.cache
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe.config
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe
+D:\Yeni klasör\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.pdb
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe.config
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.pdb
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csprojAssemblyReference.cache
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\Interop.EnvDTE.dll
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\Interop.VSLangProj.dll
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.ResolveComReference.cache
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Form1.resources
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Properties.Resources.resources
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.GenerateResource.cache
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CoreCompileInputs.cache
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
+D:\Okul\4\2019_2020.1\Tez\Arayüz\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb
